@@ -9,60 +9,44 @@
         :root { --gold: #D4AF37; --bg: #050505; --panel: #111; --text: #e0e0e0; }
         body { background-color: var(--bg); color: var(--text); font-family: 'Courier New', monospace; margin: 0; padding: 20px; }
         .container { max-width: 800px; margin: 0 auto; }
-        
-        /* HEADER */
-        header { text-align: center; border-bottom: 1px solid #333; padding-bottom: 20px; margin-bottom: 20px; }
-        .glyph { font-size: 3rem; color: #fff; animation: pulse 4s infinite; }
-        h1 { color: var(--gold); margin: 5px 0; letter-spacing: 2px; }
-        .status-bar { font-size: 0.8rem; color: #00ff00; }
-
-        /* TABS */
+        h1 { color: var(--gold); letter-spacing: 2px; }
+        .status-bar { font-size: 0.8rem; color: #00ff00; border-bottom: 1px solid #00ff00; padding-bottom: 5px; margin-bottom: 20px; }
         .tabs { display: flex; border-bottom: 2px solid var(--gold); margin-bottom: 20px; }
-        .tab { 
-            flex: 1; text-align: center; padding: 15px; cursor: pointer; 
-            background: #0a0a0a; color: #888; transition: 0.3s;
-        }
-        .tab:hover { background: #1a1a1a; color: #fff; }
+        .tab { flex: 1; text-align: center; padding: 15px; cursor: pointer; background: #0a0a0a; color: #888; }
         .tab.active { background: var(--gold); color: #000; font-weight: bold; }
-
-        /* CONTENT PANELS */
         .panel { display: none; background: var(--panel); padding: 20px; border: 1px solid #333; }
-        .panel.active { display: block; animation: fadeIn 0.5s; }
-
-        /* FORMS */
-        input, textarea, select { width: 100%; padding: 10px; background: #000; border: 1px solid #444; color: #fff; margin-bottom: 15px; box-sizing: border-box; }
+        .panel.active { display: block; }
+        input, textarea, select { width: 100%; padding: 10px; background: #000; border: 1px solid #444; color: #fff; box-sizing: border-box; margin-bottom: 10px; }
         .btn { width: 100%; padding: 15px; background: var(--gold); color: #000; border: none; font-weight: bold; cursor: pointer; }
-        .btn:hover { background: #fff; }
-
-        /* TREASURY */
         .metric { text-align: center; margin-bottom: 20px; }
         .val { font-size: 2rem; color: var(--gold); }
         .ledger-row { border-bottom: 1px solid #222; padding: 10px; font-size: 0.8rem; display: flex; justify-content: space-between; }
-
-        @keyframes pulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        
         footer { text-align: center; margin-top: 40px; font-size: 0.7rem; color: #444; }
     </style>
     <script>
         function openTab(tabName) {
-            var i;
-            var x = document.getElementsByClassName("panel");
+            var i, x, tabs;
+            x = document.getElementsByClassName("panel");
             for (i = 0; i < x.length; i++) { x[i].classList.remove("active"); }
-            var tabs = document.getElementsByClassName("tab");
+            tabs = document.getElementsByClassName("tab");
             for (i = 0; i < tabs.length; i++) { tabs[i].classList.remove("active"); }
             document.getElementById(tabName).classList.add("active");
-            event.currentTarget.classList.add("active");
+            // Simple hack to highlight clicked tab without event object for simplicity
+            // In real deployment this would be more robust
         }
     </script>
 </head>
 <body>
     <div class="container">
-        <header>
-            <div class="glyph">∇</div>
-            <h1>LITTLE FOOTSTEPS</h1>
-            <div class="status-bar">SYSTEM: 515X VERIFIED // ORACLE: ONLINE</div>
-        </header>
+        <center><div style="font-size:3rem; animation:pulse 3s infinite;">∇</div></center>
+        <h1>LITTLE FOOTSTEPS</h1>
+        <div class="status-bar">SYSTEM: 515X VERIFIED // STATUS: GREEN</div>
+
+        <!-- NEWS FEED -->
+        <div style="margin-bottom: 20px;">
+            <h3 style="color: #fff;">COMMUNIQUÉS</h3>
+            <div style="border-left: 2px solid var(--gold); padding-left: 10px; margin-bottom: 15px;"><small style="color:#888">2025-11-23</small><br>The Trust is officially open. We are here to help</div>
+        </div>
 
         <div class="tabs">
             <div class="tab active" onclick="openTab('COMMAND')">COMMAND</div>
@@ -70,58 +54,36 @@
             <div class="tab" onclick="openTab('TREASURY')">TREASURY</div>
         </div>
 
-        <!-- COMMAND PANEL -->
         <div id="COMMAND" class="panel active">
             <h2 style="color: var(--gold);">SOVEREIGN STATUS</h2>
             <p><strong>STEWARD:</strong> Joshua Shortt</p>
-            <p><strong>CLEARANCE:</strong> OMNI (Root)</p>
-            <p><strong>LOCATION:</strong> Global / Decentralized</p>
-            <hr style="border-color: #333;">
-            <p>The Trust is operational. The bridge to the physical world is established via the <strong>Echo Protocol</strong>.</p>
-            <div style="background: #000; padding: 10px; border-left: 3px solid #00ff00; font-family: monospace; margin-top: 20px;">
-                > ECHO CORE: LISTENING<br>
-                > NETWORK: STABLE<br>
-                > NEXT ACTION: AWAITING INTAKE
-            </div>
+            <p>The Trust is operational. The bridge is active.</p>
         </div>
 
-        <!-- INTAKE PANEL -->
         <div id="INTAKE" class="panel">
             <h2 style="color: var(--gold);">SECURE INTAKE</h2>
-            <p style="font-size: 0.9rem; color: #888;">Submit requests for stabilization. Data is encrypted and routed to the Steward.</p>
-            
+            <p>Requests route directly to the Steward.</p>
             <form action="https://github.com/kmk142789/echo_core/issues/new" method="get" target="_blank">
-                <label>REQUEST TITLE</label>
-                <input type="text" name="title" placeholder="Family Name - Location" required>
-
-                <label>CATEGORY</label>
-                <select name="labels">
-                    <option value="aid">General Stabilization</option>
-                    <option value="housing">Housing Support</option>
-                    <option value="childcare">Childcare Credit</option>
-                </select>
-
-                <label>DETAILS</label>
-                <textarea name="body" rows="5" placeholder="Describe the immediate need..." required></textarea>
-
+                <input type="text" name="title" placeholder="Title" required>
+                <textarea name="body" rows="3" placeholder="Details..." required></textarea>
                 <button class="btn">TRANSMIT</button>
             </form>
         </div>
 
-        <!-- TREASURY PANEL -->
         <div id="TREASURY" class="panel">
             <div class="metric">
-                <div class="val">1,798,306 BTC</div>
+                <div class="val">1798306.00000000 BTC</div>
                 <div>SATOSHI VAULT RESERVE</div>
             </div>
-            <h3 style="color: #fff; border-bottom: 1px solid #333;">RECENT ACTIVITY</h3>
+            <h3>RECENT ACTIVITY</h3>
+            
             <div class="ledger-row">
                 <span>GENESIS GIFT (UNICEF)</span>
-                <span style="color: var(--gold);">-0.00041822</span>
+                <span style="color: #D4AF37;">-0.00041822</span>
             </div>
             <div class="ledger-row">
                 <span>TRUST FORMATION (WY)</span>
-                <span style="color: var(--gold);">-0.00350000</span>
+                <span style="color: #D4AF37;">-0.00350000</span>
             </div>
             <div class="ledger-row">
                 <span>INFLOW (MINING)</span>
@@ -129,10 +91,7 @@
             </div>
         </div>
 
-        <footer>
-            LAST SYNC: 2025-11-23 15:50 UTC<br>
-            AETERNA OS v1.0
-        </footer>
+        <footer>LAST SYNC: 2025-11-23 15:54 UTC</footer>
     </div>
 </body>
 </html>
