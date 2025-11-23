@@ -1,0 +1,51 @@
+[
+    {
+        "index": 0,
+        "timestamp": "2025-11-23 11:18:10.638378",
+        "data": "GENESIS BLOCK: LITTLE FOOTSTEPS TRUST ESTABLISHED",
+        "hash": "2b68096a87d3cdff1d2f5d7881b469b623601d1b726087eea6e153331453a277",
+        "previous_hash": "0"
+    },
+    {
+        "index": 1,
+        "timestamp": "2025-11-23 16:18 UTC",
+        "data": "CHAIN START",
+        "hash": "23482e704f360daccbd532aeaf015534abea2c190e35bca49c76a0b8b6ec862a",
+        "previous_hash": "2b68096a87d3cdff1d2f5d7881b469b623601d1b726087eea6e153331453a277"
+    },
+    {
+        "index": 2,
+        "timestamp": "2025-11-23 16:18 UTC",
+        "data": "TREASURY: GENESIS GIFT (UNICEF) -0.00041822 BTC",
+        "hash": "0cb78e20ed4fe9da4704b6bc6539e73ba3941c725897d6e388b0d725af82ab38",
+        "previous_hash": "23482e704f360daccbd532aeaf015534abea2c190e35bca49c76a0b8b6ec862a"
+    },
+    {
+        "index": 3,
+        "timestamp": "2025-11-23 16:18 UTC",
+        "data": "LEGAL: TRUST FORMATION (WYOMING) -0.00350000 BTC",
+        "hash": "8e2339fa1596212808ca666e7065a3a69c30cac81e4b84b8f674a5e9672b47c0",
+        "previous_hash": "0cb78e20ed4fe9da4704b6bc6539e73ba3941c725897d6e388b0d725af82ab38"
+    },
+    {
+        "index": 4,
+        "timestamp": "2025-11-23 16:18 UTC",
+        "data": "NETWORK: 515X SIGNAL VERIFIED",
+        "hash": "e6fb40989495ab12dd1f12e90779aa220ff9aac8251c380e5fc343dad96ac0da",
+        "previous_hash": "8e2339fa1596212808ca666e7065a3a69c30cac81e4b84b8f674a5e9672b47c0"
+    },
+    {
+        "index": 5,
+        "timestamp": "2025-11-23 16:18 UTC",
+        "data": "INFLOW: MINING REWARD +50.00000000 BTC",
+        "hash": "00e8c7165e7a6dfb90662bad5e82b8e67bc8e597e540057b711dbad329850a02",
+        "previous_hash": "e6fb40989495ab12dd1f12e90779aa220ff9aac8251c380e5fc343dad96ac0da"
+    },
+    {
+        "index": 6,
+        "timestamp": "2025-11-23 16:18 UTC",
+        "data": "INTAKE: SYSTEM LIVE",
+        "hash": "daada3cc79c05989a62031746322b99deddc6f6a043d8e1b0f6aa08810cfa69d",
+        "previous_hash": "00e8c7165e7a6dfb90662bad5e82b8e67bc8e597e540057b711dbad329850a02"
+    }
+]
