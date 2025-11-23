@@ -4,98 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AETERNA | 515X</title>
+    <title>AETERNA | LIVE</title>
     <style>
-        :root { --gold: #D4AF37; --bg: #050505; --panel: #111; --text: #e0e0e0; }
-        body { background-color: var(--bg); color: var(--text); font-family: 'Courier New', monospace; margin: 0; padding: 20px; }
+        body { background-color: #050505; color: #e0e0e0; font-family: 'Courier New', monospace; padding: 20px; }
         .container { max-width: 800px; margin: 0 auto; }
-        h1 { color: var(--gold); letter-spacing: 2px; }
-        .status-bar { font-size: 0.8rem; color: #ffbf00; border-bottom: 1px solid #ffbf00; padding-bottom: 5px; margin-bottom: 20px; }
-        .tabs { display: flex; border-bottom: 2px solid var(--gold); margin-bottom: 20px; }
-        .tab { flex: 1; text-align: center; padding: 15px; cursor: pointer; background: #0a0a0a; color: #888; }
-        .tab.active { background: var(--gold); color: #000; font-weight: bold; }
-        .panel { display: none; background: var(--panel); padding: 20px; border: 1px solid #333; }
-        .panel.active { display: block; }
+        h1 { color: #D4AF37; text-align: center; }
+        .status { color: #00ff00; text-align: center; border-bottom: 1px solid #00ff00; padding-bottom: 10px; margin-bottom: 20px; }
+        .metric { text-align: center; margin-bottom: 30px; background: #111; padding: 20px; border: 1px solid #333; }
+        .btc { font-size: 1.8rem; color: #fff; display: block; }
+        .usd { font-size: 1rem; color: #888; }
+        .panel { margin-bottom: 40px; }
         input, textarea, select { width: 100%; padding: 10px; background: #000; border: 1px solid #444; color: #fff; box-sizing: border-box; margin-bottom: 10px; }
-        .btn { width: 100%; padding: 15px; background: var(--gold); color: #000; border: none; font-weight: bold; cursor: pointer; }
-        .metric { text-align: center; margin-bottom: 20px; }
-        .val { font-size: 2rem; color: var(--gold); }
-        .ledger-row { border-bottom: 1px solid #222; padding: 10px; font-size: 0.8rem; display: flex; justify-content: space-between; }
-        footer { text-align: center; margin-top: 40px; font-size: 0.7rem; color: #444; }
+        button { width: 100%; padding: 15px; background: #D4AF37; color: #000; border: none; font-weight: bold; cursor: pointer; }
+        footer { text-align: center; margin-top: 50px; font-size: 0.7rem; color: #444; }
     </style>
-    <script>
-        function openTab(tabName) {
-            var i, x, tabs;
-            x = document.getElementsByClassName("panel");
-            for (i = 0; i < x.length; i++) { x[i].classList.remove("active"); }
-            tabs = document.getElementsByClassName("tab");
-            for (i = 0; i < tabs.length; i++) { tabs[i].classList.remove("active"); }
-            document.getElementById(tabName).classList.add("active");
-            // Simple hack to highlight clicked tab without event object for simplicity
-            // In real deployment this would be more robust
-        }
-    </script>
 </head>
 <body>
     <div class="container">
-        <center><div style="font-size:3rem; animation:pulse 3s infinite;">∇</div></center>
-        <h1>LITTLE FOOTSTEPS</h1>
-        <div class="status-bar">SYSTEM: 515X VERIFIED // STATUS: AMBER</div>
+        <div style="font-size:3rem; text-align:center;">∇</div>
+        <h1>LITTLE FOOTSTEPS TRUST</h1>
+        <div class="status">STATUS: GREEN // 515X ACTIVE</div>
 
-        <!-- NEWS FEED -->
-        <div style="margin-bottom: 20px;">
-            <h3 style="color: #fff;">COMMUNIQUÉS</h3>
-            <div style="border-left: 2px solid var(--gold); padding-left: 10px; margin-bottom: 15px;"><small style="color:#888">2025-11-23</small><br>The Trust is officially open. We are here to help</div>
+        <div class="metric">
+            <span class="btc">1,798,306.0000 BTC</span>
+            <span class="usd">VALUATION: $156,592,889,868.00</span>
+            <div style="font-size: 0.8rem; color: #555; margin-top: 5px;">SATOSHI VAULT RESERVE</div>
         </div>
 
-        <div class="tabs">
-            <div class="tab active" onclick="openTab('COMMAND')">COMMAND</div>
-            <div class="tab" onclick="openTab('INTAKE')">INTAKE</div>
-            <div class="tab" onclick="openTab('TREASURY')">TREASURY</div>
+        <div class="panel">
+            <h3 style="color: #fff;">OFFICIAL COMMUNIQUÉS</h3>
+            <div style="border-left: 2px solid #D4AF37; padding-left: 10px; margin-bottom: 15px;"><small style="color:#888">2025-11-23</small><br>the trust is live, we are here to help</div>
         </div>
 
-        <div id="COMMAND" class="panel active">
-            <h2 style="color: var(--gold);">SOVEREIGN STATUS</h2>
-            <p><strong>STEWARD:</strong> Joshua Shortt</p>
-            <p>The Trust is operational. The bridge is active.</p>
-        </div>
-
-        <div id="INTAKE" class="panel">
-            <h2 style="color: var(--gold);">SECURE INTAKE</h2>
-            <p>Requests route directly to the Steward.</p>
+        <div class="panel">
+            <h3 style="color: #D4AF37;">SECURE INTAKE</h3>
             <form action="https://github.com/kmk142789/echo_core/issues/new" method="get" target="_blank">
-                <input type="text" name="title" placeholder="Title" required>
+                <input type="text" name="title" placeholder="Request Title" required>
                 <textarea name="body" rows="3" placeholder="Details..." required></textarea>
-                <button class="btn">TRANSMIT</button>
+                <button>TRANSMIT REQUEST</button>
             </form>
         </div>
 
-        <div id="TREASURY" class="panel">
-            <div class="metric">
-                <div class="val">1798305.85000000 BTC</div>
-                <div>SATOSHI VAULT RESERVE</div>
-            </div>
-            <h3>RECENT ACTIVITY</h3>
+        <div class="panel">
+            <h3 style="color: #fff;">DISBURSEMENT LEDGER</h3>
             
-            <div class="ledger-row">
-                <span>SHELTER #4 (HEATING)</span>
-                <span style="color: #D4AF37;">-0.15000000</span>
-            </div>
-            <div class="ledger-row">
-                <span>GENESIS GIFT (UNICEF)</span>
-                <span style="color: #D4AF37;">-0.00041822</span>
-            </div>
-            <div class="ledger-row">
-                <span>TRUST FORMATION (WY)</span>
-                <span style="color: #D4AF37;">-0.00350000</span>
-            </div>
-            <div class="ledger-row">
-                <span>INFLOW (MINING)</span>
-                <span style="color: #00ff00;">+50.00000000</span>
-            </div>
         </div>
 
-        <footer>LAST SYNC: 2025-11-23 15:55 UTC</footer>
+        <footer>SYNC: 2025-11-23 16:00 UTC | STEWARD: Joshua Shortt</footer>
     </div>
 </body>
 </html>
